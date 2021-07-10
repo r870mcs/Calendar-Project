@@ -1,18 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Profile_input : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+
+    public void Change_Name()
     {
+        bool isactive;
+        isactive = gameObject.activeInHierarchy;
+        Text text_Changed;
+        text_Changed = transform.Find("input_name").GetComponent<Text>();
         
+
+        if (isactive)
+        {
+            gameObject.SetActive(false);
+            
+
+        }
+        else if (!isactive)
+        {
+            gameObject.SetActive(true);
+        }
     }
 }
